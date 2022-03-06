@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="Rotation.js"></script>
+    <script src="Coins.js"></script>
+    <script src = "Fish.js"></script>
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-sky geometry="primitive: sphere;"
+            material="shader: gradient; bottomColor: #00009e; topColor:109 205 227;offset: 0.0001;" radius="100"
+            theta-length="180" side="double"
+            animation="property: rotation; to: 0 300 0; easing:linear; loop: true; dur: 500000"></a-sky>
+        <!-- <a-sky src = "https://media.istockphoto.com/photos/empty-bottom-of-the-sea-with-rocks-reef-and-sea-urchins-picture-id1007189728?k=20&m=1007189728&s=612x612&w=0&h=60mFoVff0xFzW7GXEia4ywyeKY9InEu0MRoizJt8uf4="></a-sky> -->
+
+        <a-assets>
+            <a-asset-item id="island" src="models/island/island/scene.gltf">
+                </a-asset-iem>
+                <a-asset-item id="divers" src="models/scuba/scene.gltf"></a-asset-item>
+                <a-asset-item id="treasure" src="models/treasure/model.gltf"></a-asset-item>
+                <a-asset-item id="turtle" src="models/turtle/scene.gltf"></a-asset-item>
+                <a-asset-item id="fish" src="models/fish/scene.gltf"></a-asset-item>
+
+        </a-assets>
+
+        <a-entity gltf-model="#island" scale="1 1 1" position="0 -15 -40" ocean id = "Island" coin fish>
+
+        </a-entity>
+        <a-entity gltf-model="#treasure" scale="15 15 15" position="0 -30 -40" rotation="0 90 0" ocean></a-entity>
+        <a-entity gltf-model="#treasure" scale="15 15 15" position="10 -30 -40" rotation="0 90 0" ocean></a-entity>
+        <a-entity gltf-model="#treasure" scale="15 15 15" position="-20 -30 -40" rotation="0 100 0" ocean></a-entity>
+
+        
+        
+
+
+        <a-entity gltf-model="#divers" scale="0.2 0.2 0.2" position="3 -6 1" rotation="0 90 -20" diver>
+
+            <a-sphere id="bubble1" position="52.9829 119.97737 -49.38121" radius="2" color="#b2ebf2"
+                animation="property: position; to: 52.9829 300 -49.38121;easing:linear; loop: true; dur: 2000">
+            </a-sphere>
+
+
+
+        </a-entity>
+
+        <a-entity camera="active: true" look-controls position="0 10 20"></a-entity>
+
+
+
+
+
+    </a-scene>
+</body>
+
+</html>
